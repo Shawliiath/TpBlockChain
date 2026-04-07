@@ -3,7 +3,6 @@ const { ethers } = require("hardhat");
 
 describe("SimpleStorage", function () {
 
-  // Fixture : déploie le contrat une fois, réutilise l'état pour chaque test
   async function deploySimpleStorageFixture() {
     const [owner, otherAccount] = await ethers.getSigners();
 
@@ -12,8 +11,6 @@ describe("SimpleStorage", function () {
 
     return { simpleStorage, owner, otherAccount };
   }
-
-  // --- Déploiement ---
 
   describe("Déploiement", function () {
 
@@ -33,8 +30,6 @@ describe("SimpleStorage", function () {
     });
 
   });
-
-  // --- Fonction store() ---
 
   describe("store()", function () {
 
@@ -68,10 +63,7 @@ describe("SimpleStorage", function () {
 
   });
 
-  // --- Fonction getState() ---
-
-  describe("getState()", function () { 
-    
+  describe("getState()", function () {
 
     it("Doit retourner l'état complet du contrat", async function () {
       const { simpleStorage, owner } = await deploySimpleStorageFixture();
