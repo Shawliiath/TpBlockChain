@@ -70,7 +70,8 @@ describe("SimpleStorage", function () {
 
   // --- Fonction getState() ---
 
-  describe("getState()", function () {
+  describe("getState()", function () { 
+    
 
     it("Doit retourner l'état complet du contrat", async function () {
       const { simpleStorage, owner } = await deploySimpleStorageFixture();
@@ -78,7 +79,7 @@ describe("SimpleStorage", function () {
 
       const [value, count, ownerAddr] = await simpleStorage.getState();
       expect(value).to.equal(77n);
-      expect(count).to.equal(1n);
+      expect(value).to.equal(1n);
       expect(ownerAddr).to.equal(owner.address);
     });
 
