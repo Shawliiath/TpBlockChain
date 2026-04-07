@@ -79,7 +79,7 @@ describe("SimpleStorage", function () {
 
       const [value, count, ownerAddr] = await simpleStorage.getState();
       expect(value).to.equal(77n);
-      expect(value).to.equal(1n);
+      expect(count).to.equal(1n);
       expect(ownerAddr).to.equal(owner.address);
     });
 
